@@ -19,15 +19,19 @@ function EventBox({ event }) {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
+
+  //   let a = event.dates.end.localDate;
+  //   console.log(a);
+
   return (
     <Card
       hoverable
       style={{
         width: 340,
       }}
-      cover={<img className="image" alt="article" src={event.images[0].url} />}
+      cover={<img className="image" alt="event" src={event.images[0].url} />}
     >
-      <Meta title={event.name} description={event.name} />
+      <Meta title={event.name} />
       <Button type="primary" onClick={showModal}>
         Read More
       </Button>
@@ -37,7 +41,11 @@ function EventBox({ event }) {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        <p>{event.name}</p>
+        <p>Start Date: {event.dates.start.localDate}</p>
+        <p>
+          End Date:
+          {event.dates.end ? <p>{event.dates.end.localDate}</p> : <p>"TBA"</p>}
+        </p>
         <Button type="link" target="_blank" href={event.url}>
           Continue reading here...
         </Button>
