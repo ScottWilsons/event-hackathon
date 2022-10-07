@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-color: #1b1b32;
+}
+
+.ant-card-meta {
+  justify-content: center;
 }
 
 .Event-container {

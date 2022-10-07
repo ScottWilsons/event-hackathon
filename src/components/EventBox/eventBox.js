@@ -50,7 +50,7 @@ function EventBox({ event }) {
           Continue reading here...
         </Button>
       </Modal>
-      <p>{event.name}</p>
+      <p>{event._embedded.venues[0].name}</p>
     </Card>
   );
 }

@@ -1,0 +1,9 @@
+.NavBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-image: url("https://i.postimg.cc/1XhS2kdy/back.jpg");
+  background-size: cover;
+  height: 20vh;
+  width: 100vw;
+}

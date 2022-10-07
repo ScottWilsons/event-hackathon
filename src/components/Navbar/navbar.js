@@ -1,19 +1,33 @@
 import React from "react";
 import { Input } from "antd";
 import "antd/dist/antd.css";
+import "./navbar.css";
+
 const { Search } = Input;
 
-function navbar({ setSearchTerm }) {
-  const onSearch = (value) => setSearchTerm(value);
+function navbar({ setSearchTerm, setSearchCountry }) {
+  const onSearchEvent = (value) => setSearchTerm(value);
+  const onSearchCountry = (value) => setSearchCountry(value);
   return (
-    <div>
-      <Search
-        placeholder="Search Event"
-        onSearch={onSearch}
-        style={{
-          width: 340,
-        }}
-      />
+    <div className="NavBar">
+      <div>
+        <Search
+          placeholder="Search Event"
+          onSearch={onSearchEvent}
+          style={{
+            width: 340,
+          }}
+        />
+      </div>
+      <div>
+        <Search
+          placeholder="Change Country"
+          onSearch={onSearchCountry}
+          style={{
+            width: 200,
+          }}
+        />
+      </div>
     </div>
   );
 }

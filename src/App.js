@@ -6,20 +6,22 @@ import EventBox from "./components/EventBox/eventBox";
 function App() {
   const [apiData, setApiData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("music");
+  const [searchCountry, setSearchCountry] = useState("GB");
   useEffect(() => {
     async function FetchData() {
       const response = await fetch(
-        `https://app.ticketmaster.com/discovery/v2/events.json?size=12&keyword=${searchTerm}&apikey=${process.env.REACT_APP_API_KEY}`
+        `https://app.ticketmaster.com/discovery/v2/events.json?size=12&countryCode=${searchCountry}&keyword=${searchTerm}&apikey=${process.env.REACT_APP_API_KEY}`
       );
       const data = await response.json();
       setApiData(data._embedded.events);
     }
     FetchData();
-  }, [searchTerm]);
+  }, [searchTerm, searchCountry]);
   console.log(apiData);
   return (
     <div className="App">
-      <Navbar setSearchTerm={setSearchTerm} />
+      <Navbar setSearchTerm={setSearchTerm}
+      setSearchCountry={setSearchCountry} />
       <div className="Event-container">
         {apiData.map((event) => {
           return <EventBox event={event} />;
