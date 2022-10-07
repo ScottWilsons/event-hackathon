@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [apiData, setApiData] = useState([]);
+  useEffect(() => {
+    async function FetchData() {
+      const response = await fetch(
+        `https://app.ticketmaster.com/discovery/v2/events.json?size=12&keyword=${"music"}&apikey=G9W1WD3OfwmkGDCxn6dbEKrVSEC49m9x`
+      );
+      const data = await response.json();
+      setApiData(data);
+    }
+    FetchData();
+  }, []);
+  console.log(apiData);
+  return <div className="App"></div>;
 }
 
 export default App;
