@@ -1,0 +1,12 @@
+.footer {
+  background-color: rgb(75, 28, 119);
+  height: 5vh;
+  width: 99.1vw;
+  color: #ffffff;
+  /* text-align: center;
+  align-items: center; */
+  flex-direction: column;
+  justify-content: space-around;
+  display: flex;
+  border-top: 2px solid #ffffff;
+}

@@ -10,6 +10,7 @@ function navbar({ setSearchTerm, setSearchCountry }) {
   const onSearchCountry = (value) => setSearchCountry(value);
   return (
     <div className="NavBar">
+      <p className="title">e.Vents</p>
       <div>
         <Search
           placeholder="Search Event"

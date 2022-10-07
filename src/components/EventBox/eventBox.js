@@ -25,6 +25,7 @@ function EventBox({ event }) {
 
   return (
     <Card
+      className="card"
       hoverable
       style={{
         width: 340,
@@ -32,6 +33,7 @@ function EventBox({ event }) {
       cover={<img className="image" alt="event" src={event.images[0].url} />}
     >
       <Meta title={event.name} />
+      <br></br>
       <Button type="primary" onClick={showModal}>
         Read More
       </Button>
@@ -47,9 +49,10 @@ function EventBox({ event }) {
           {event.dates.end ? <p>{event.dates.end.localDate}</p> : <p>"TBA"</p>}
         </p>
         <Button type="link" target="_blank" href={event.url}>
-          Continue reading here...
+          Click here to book tickets and read more...
         </Button>
       </Modal>
+      <br></br>
       <p>{event._embedded.venues[0].name}</p>
     </Card>
   );

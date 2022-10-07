@@ -1,6 +1,9 @@
 .image {
   height: 200px;
-  width: 340px;
+  width: 338px;
 }
 
-
+.card {
+  margin-bottom: 30px;
+  border: 2px solid #ffffff;
+}
