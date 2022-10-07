@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.Event-container {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  justify-content: space-evenly;
+}
