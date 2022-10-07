@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Card, Button, Modal } from "antd";
 import "antd/dist/antd.css";
+import "./eventBox.css";
 
 const { Meta } = Card;
 
@@ -24,7 +25,7 @@ function EventBox({ event }) {
       style={{
         width: 340,
       }}
-      cover={<img alt="article" src={event.images[0].url} />}
+      cover={<img className="image" alt="article" src={event.images[0].url} />}
     >
       <Meta title={event.name} description={event.name} />
       <Button type="primary" onClick={showModal}>
