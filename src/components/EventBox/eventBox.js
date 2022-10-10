@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Button, Modal } from "antd";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import "./eventBox.css";
 
 const { Meta } = Card;
@@ -38,8 +38,9 @@ function EventBox({ event }) {
         Read More
       </Button>
       <Modal
+        className="modal"
         title={event.name}
-        visible={isModalVisible}
+        open={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
       >

@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "antd";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import "./navbar.css";
 
 const { Search } = Input;
